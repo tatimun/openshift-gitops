@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: cluster1-secret
+  namespace: argocd
+type: Opaque
+stringData:
+  name: cluster1
+  server: 'https://cluster1-api-server:6443'
+  config: |
+    # Configuración de acceso al cluster1
