@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: default
-  namespace: argocd-namespaces-new
+  namespace: argocd
 spec:
   description: Proyecto por defecto para todas las aplicaciones
   sourceRepos:
