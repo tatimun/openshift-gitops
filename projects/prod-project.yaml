@@ -6,7 +6,7 @@ metadata:
 spec:
   description: Proyecto por defecto para todas las aplicaciones
   sourceRepos:
-    - 'https://github.com/tatimun/app2-gitops.git' # Permite cualquier repositorio Git
+    - '*' # Permite cualquier repositorio Git
   destinations:
     - namespace: '*' # Permite cualquier namespace
       server: 'https://kubernetes.default.svc' # Cluster local
