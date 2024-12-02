@@ -4,7 +4,7 @@ metadata:
   name: sync-projects
   namespace: argocd
 spec:
-  project: project1
+  project: default
   source:
     repoURL: 'https://github.com/tatimun/openshift-gitops'
     targetRevision: HEAD
