@@ -7,5 +7,5 @@ spec:
   sourceRepos:
     - '*' 
   destinations:
-    - namespace: project2
+    - namespace: '*' 
       server: 'https://kubernetes.default.svc'

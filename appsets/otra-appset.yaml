@@ -7,13 +7,13 @@ spec:
   generators:
     - list:
         elements:
-          - name: homebanking-desa
+          - name: homebanking
             namespace: project1
             path: overlays/desa
-          - name: homebanking-homo
+          - name: homebanking
             namespace: project2
             path: overlays/homo
-          - name: homebanking-prod
+          - name: homebanking
             namespace: project3
             path: overlays/prod
   template:
