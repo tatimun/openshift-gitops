@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: project3
-  namespace: project3
+  namespace: openshift-gitops
 spec:
   description: Proyecto por defecto para todas las aplicaciones
   sourceRepos:
