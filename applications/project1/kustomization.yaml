@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: sync-projects
-  namespace: argocd
+  namespace: project1
 spec:
   project: default
   source:
