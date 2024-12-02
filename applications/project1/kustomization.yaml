@@ -2,9 +2,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: sync-projects
-  namespace: project1
+  namespace: argocd
 spec:
-  project: default
+  project: project1
   source:
     repoURL: 'https://github.com/tatimun/openshift-gitops'
     targetRevision: HEAD
