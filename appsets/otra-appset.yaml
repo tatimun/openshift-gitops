@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: homebanking
+  namespace: openshift-gitops
+spec:
+  generators:
+    - list:
+        elements:
+          - name: homebanking-desa
+            namespace: project1
+            path: overlays/desa
+          - name: homebanking-homo
+            namespace: project2
+            path: overlays/homo
+          - name: homebanking-prod
+            namespace: project3
+            path: overlays/prod
+  template:
+    metadata:
+      name: '{{name}}'
+    spec:
+      project: '{{namespace}}'
+      source:
+        repoURL: 'https://github.com/tatimun/app2-gitops.git'
+        targetRevision: HEAD
+        path: '{{path}}'
+      destination:
+        server: 'https://kubernetes.default.svc'
+        namespace: '{{namespace}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
