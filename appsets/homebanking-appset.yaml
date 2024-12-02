@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: homebanking
+  name: homebanking  # Nombre del ApplicationSet
   namespace: openshift-gitops
 spec:
   generators:
     - list:
         elements:
-          - name: homebanking-desa
+          - name: homebanking-desa  # Nombre único para cada aplicación
             namespace: project1
             path: overlays/desa
           - name: homebanking-homo
@@ -18,17 +18,10 @@ spec:
             path: overlays/prod
   template:
     metadata:
-      name: '{{name}}'
+      name: '{{name}}'  # Usa el nombre definido en el generador
     spec:
       project: '{{namespace}}'
       source:
         repoURL: 'https://github.com/tatimun/app2-gitops.git'
         targetRevision: HEAD
-        path: '{{path}}'
-      destination:
-        server: 'https://kubernetes.default.svc'
-        namespace: '{{namespace}}'
-      syncPolicy:
-        automated:
-          prune: true
-          selfHeal: true
+        path: '{{path}}'  # Usa la ruta definida en el gener
