@@ -1,18 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: project2
-  namespace: project2
+  name: project1
+  namespace: argocd
 spec:
-  description: Proyecto por defecto para todas las aplicaciones
   sourceRepos:
-    - 'https://github.com/tatimun/openshift-gitops' # Permite cualquier repositorio Git
+    - 'https://github.com/tatimun/app2-gitops.git'
   destinations:
-    - namespace: '*' # Permite cualquier namespace
-      server: 'https://kubernetes.default.svc' # Cluster local
-  clusterResourceWhitelist:
-    - group: '*'
-      kind: '*'
-  namespaceResourceBlacklist:
-    - group: '*'
-      kind: 'Secret' # Ejemplo: Bloquea la gestión de secretos
+    - namespace: project1
+      server: 'https://kubernetes.default.svc'
